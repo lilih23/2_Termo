@@ -1,0 +1,9 @@
+const entrada = require(`readline-sync`);
+
+const velocidade = entrada.questionFloat("Qual a velocidade do carro em km/h? ");
+
+if (velocidade <= 80) {
+    console.log("velocidade dentro do limite permitido, Boa viagem!");
+}else {
+    console.log("velocidade acima do limite, multa de R$ 300,00");
+}
