@@ -1,0 +1,88 @@
+.grid-ex1 {
+    display: grid;
+    /* grid-template-columns; 2fr 1fr; */
+    /* grid-template-columns; 2fr 1fr; */
+    grid-template-columns: repeat(4, 1fr);
+    gap: 48px;
+    list-style: none;
+    margin: 0;
+    padding: 32px;
+    height: auto;
+    width: auto;
+    background-color:skyblue
+}
+
+.grid-gal-img {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(223px, 1fr));
+    gap: 32px;
+    list-style: none;
+
+    padding: 0;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    display: inline-block;
+}
+
+.flex-grid {
+    display: flex;
+    list-style: center;
+    gap: 40px;
+}
+
+.lab-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 43px;
+}
+
+
+/* Configuração de Responsividade */
+/* Responsividade para Lab-grid */
+@media(max-width: 500px){
+    .lab-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media(max-width: 700px){
+    .flex-grid {
+        flex-direction: column;
+    }
+}
+
+@media(max-width:76px) {
+    .grid-ex1 {
+        grid-template-columns: 1fr;
+    }
+} */
+/* configuracão de midias para dispositivos /*
+/* DESKTOP */
+.grid-ex1 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+/* TABLET */
+@media(max-width: 900px ){
+.grid-ex1 {
+    grid-template-columns: repeat(2, 1fr);
+    }
+
+.grid-gal-img {
+     grid-template-columns: repeat(3, 1fr);
+    }
+}
+/* CELULAR */
+@media(max-width: 600px ) {
+    .grid-ex1 {
+        grid-template-columns: 1fr;
+    }
+    .grid-Gal-img {
+        grid-template-columns: 1fr;
+    }
+}
