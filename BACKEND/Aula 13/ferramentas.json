@@ -1,0 +1,12 @@
+[
+  {
+    "nome": "pedras",
+    "quantidade": 90000,
+    "custoUnitario": 5000000
+  },
+  {
+    "nome": "areia",
+    "quantidade": 900000,
+    "custoUnitario": 500000
+  }
+]
