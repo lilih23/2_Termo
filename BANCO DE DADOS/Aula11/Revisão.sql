@@ -1,107 +1,148 @@
--- Active: 1794917666283@@127.0.0.1@3306@biblioteca_senai_lidia
-DROP DATABASE IF EXISTS BIBLIOTECA_SENAI_LIDIA;
-
-CREATE DATABASE  BIBLIOTECA_SENAI_LIDIA;
-
-USE BIBLIOTECA_SENAI_LIDIA;
-----------------------------------------------------------------------
-
--- FASE 1 - DDL
-CREATE TABLE USUARIO (
-    ID_USUARIO INT AUTO_INCREMENT,
-    NOME VARCHAR(100) NOT NULL,
-    EMAIL VARCHAR(120) NOT NULL UNIQUE,
-    TELEFONE VARCHAR(20),
-    ATIVO BOOLEAN DEFAULT TRUE,
+-- fase 1 - DDl
 
 
-    CONSTRAINT PK_ID_USUARIO PRIMARY KEY (ID_USUARIO),
-    CONSTRAINT UQ_EMAIL UNIQUE (EMAIL)
+
+
+create table usuario(
+    id_usuario int auto_increment,
+    nome varchar(100) not null,
+    email VARCHAR(120) not null UNIQUE,
+    telefone VARCHAR(20),
+    ativo BOOLEAN DEFAULT true,
+
+
+    constraint pk_id_usuario primary key (id_usuario),
+    constraint uq__email UNIQUE (email)
 );
 
-CREATE TABLE LIVRO (
-    ID_LIVRO INT AUTO_INCREMENT,
-    TITULO VARCHAR(200) NOT NULL,
-    AUTOR VARCHAR(100) NOT NULL,
-    ISBN VARCHAR(20) NOT NULL,
-    ANO_PUBLICACAO INT,
-    QUANTIDADE_DISPONIVEL INT DEFAULT 0 CHECK (QUANTIDADE_DISPONIVEL >= 0),
 
-    CONSTRAINT PK_ID_LIVRO PRIMARY KEY (ID_LIVRO),
-    CONSTRAINT UQ_ISBN UNIQUE (ISBN)
+create table if not exists livro (
+    id_livro INT AUTO_INCREMENT ,
+    titulo VARCHAR(150) NOT NULL,
+    autor VARCHAR(120) NOT NULL,
+    isbn CHAR(13) NOT NULL UNIQUE,
+    ano_publicacao INT ,
+    quantidade_disponivel INT DEFAULT 0 CHECK (quantidade_disponivel >= 0),
+
+
+    constraint pk_livro primary key (id_livro),
+    constraint uq_isbn UNIQUE (isbn)
 );
 
-CREATE TABLE EMPRESTIMO (
-    ID_EMPRESTIMO INT AUTO_INCREMENT,
-    DATA_EMPRESTIMO DATETIME DEFAULT CURRENT_TIMESTAMP,
-    DATA_PREVISTA DATE NOT NULL,
-    DATA_DEVOLUCAO DATE,
-    STATUS_EMPRESTIMO VARCHAR(20) DEFAULT 'ABERTO' CHECK (STATUS_EMPRESTIMO IN ('ABERTO', 'DEVOLVIDO', 'ATRASADO')),
-    ID_USUARIO INT NOT NULL,
-    ID_LIVRO INT NOT NULL,
 
-    CONSTRAINT PK_EMPRESTIMO PRIMARY KEY (ID_EMPRESTIMO),
-    CONSTRAINT FK_USUARIO FOREIGN KEY (ID_USUARIO) REFERENCES USUARIO(ID_USUARIO),
-    CONSTRAINT FK_LIVRO FOREIGN KEY (ID_LIVRO) REFERENCES LIVRO(ID_LIVRO)
+create table emprestimo (
+    id_emprestimo INT AUTO_INCREMENT ,
+    data_emprestimo DATETIME DEFAULT CURRENT_TIMESTAMP,
+    data_prevista DATE NOT NULL,
+    data_devolucao DATE,
+    status_emprestimo VARCHAR(20) DEFAULT 'ABERTO' CHECK (status_emprestimo IN ('ABERTO', 'DEVOLVIDO', 'ATRASADO')),
+    id_usuario INT NOT NULL,
+    id_livro INT NOT NULL,
+
+
+    CONSTRAINT pk_emprestimo PRIMARY KEY (id_emprestimo),
+    CONSTRAINT fk_usuario FOREIGN KEY (id_usuario) REFERENCES USUARIO(id_usuario),
+    CONSTRAINT fk_livro FOREIGN KEY (id_livro) REFERENCES LIVRO(id_livro)
 );
 
-CREATE TABLE CATEGORIA (
-    ID_CATEGORIA INT AUTO_INCREMENT,
-    NOME VARCHAR(100) NOT NULL UNIQUE,
-    ID_LIVRO INT NOT NULL,
 
-    CONSTRAINT PK_CATEGORIA PRIMARY KEY (ID_CATEGORIA),
-    CONSTRAINT UQ_CATEGORIA_NOME UNIQUE (NOME),
-    CONSTRAINT FK_CATEGORIA_LIVRO FOREIGN KEY (ID_LIVRO) REFERENCES LIVRO(ID_LIVRO)
+create table categoria (
+    id_categoria INT AUTO_INCREMENT,
+    nome VARCHAR(100) NOT NULL UNIQUE,
+    id_livro INT NOT NULL,
 
+
+    CONSTRAINT pk_categoria PRIMARY KEY (id_categoria),
+    CONSTRAINT uq_categoria_nome UNIQUE (NOME),
+    CONSTRAINT FK_categoria_livro  FOREIGN KEY (id_livro) REFERENCES LIVRO (id_livro)
 );
 
-ALTER TABLE LIVRO ADD EDITORA VARCHAR(100);
 
---FASE 2 -DML
-INSERT INTO USUARIO (nome, email, telefone, ativo) VALUES
-('LIDIA', 'LIDIAFERREIA@EMAIL.COM', '1921557257', TRUE),
-('EMYLLI', 'EMYLLI@EMAIL.COM', '1984521298', TRUE);
-
-INSERT INTO LIVRO (TITULO, AUTOR, ISBN, ANO_PUBLICACAO, QUANTIDADE_DISPONIVEL) VALUES
-('HARRY POTTER', 'J.K ROELING', '1234567890', 1997,30);
+ALTER TABLE livro ADD editora VARCHAR(100);
 
 
-INSERT INTO CATEGORIA   NOME, (ID_LIVRO) VALUES
-('FANTASIA', 1)
+-- fase 2 - dml
 
-SELECR * FROM USUARIO;
 
-UPDATE USUSARIO
-SET TELEFONE ='00000000000'
-WHERE ID=D_USUARIO = 1;
+INSERT INTO usuario (nome , email, telefone, ativo) VALUES
+('laura', 'laurinhadocamarao@gmail.com', '19981215360', TRUE),
+('livia', 'liviadabocado09@gmai.com', '12986105680', TRUE),
+('lidia', 'lidiaodocomando@gmai.com', '12987655680', FALSE);
 
-UPDATE LIVRO
-SET QUANTIDADE_DISPONIVEL = QUANTIDADE_DISPONIVEL + 2
-WHHERE ANO_PUBLICACAO >= 1900;
 
-INSERT INTO USUARIO (NOME, EMAIL, TELEFONE, ATIVO) VALUES
-('TEMPORARIO', 'TEMPORARIO@EMAIL.COM', NULL, TRUE);
+INSERT INTO LIVRO (TITULO, AUTOR, ISBN, ANO_PUBLICACAO, QUANTIDADE_DISPONIVEL, EDITORA) VALUES
+('O Pequeno Príncipe', 'Antoine de Saint-Exupéry', '97831484100', 1943, 5, 'Editora A'),
+('Promessas crueis', 'rebecca ross', '978685348386', 2024, 3, 'Editora B'),
+('Dom Casmurro', 'Machado de Assis', '978855902778', 1899, 2, 'Editora C');
 
-SELECT * FROM USUARIO;
-DELETE FROM USUARIO
-WHERE ID_USUARIO = 2;
---
 
-INSERT INTO EMPRESTIMO (DATA_EMPRESTIMO, DATA_PREVISTA, DATA_DEVOLUCAO, STATUS_EMPRESTIMO, ID_USUARIO, ID_LIVRO) VALUES
-(NOW(), '2026-11-17',NULL,'ABERTO',1,1);
+INSERT INTO categoria (nome, ID_LIVRO) VALUES
+('Infantil', 4),
+('Romance', 5),
+('Clássico', 6);
 
--- FASE 3 - DQL
-SELECT TITULO, AUTOR, QUANTIDADE_DISPONIVEL FROM LIVRO;
 
-SELECT TITULO, AUTOR FROM LIVRO
-WHERE QUANTIDADE_DISPONIVEL > 2
-ORDER BY QUANTIDADE_DISPONIVEL DESC;
+SELECT * FROM usuario;
 
-SELECT TITULO, AUTOR FROM LIVRO
-WHERE TITULO LIKE '%HARRY%';
 
-SELECT TITULO, AUTOR, ANO_PUBLICADO FROM LIVRO
-WHERE ANO_PUBLICACAO BETWEEN 1990 AND 2025;
+UPDATE usuario
+set telefone = '098765432110'
+where id_usuario = 3;
 
-SELECT COUNT(*) AS QUANTIDADE, SUM(QUANTIDADE_DISPONIVEL) AS SOMA, AVG(QUANTIDADE_DISPONVEL) AS MEDIA, MAX(QUANTIDADE_DISPONIVEL) AS MAXIMO, MIN(QUANTIDADE_DISPONIVEL) AS MINIMO FROM LIVRO;
+
+UPDATE livro 
+set quantidade_disponivel = quantidade_disponivel + 2
+WHERE ano_publicacao >= 1990;
+
+
+INSERT INTO usuario (nome, email, telefone, ativo) VALUES
+('sebastiao', 'velhodalancha@gmail.com', null, true);
+
+
+SELECT * FROM usuario;
+
+
+DELETE FROM usuario
+WHERE id_usuario = 1;
+-- a chave estrangeira esta restringindo a exclusao do usuario
+
+
+INSERT INTO emprestimo (data_emprestimo, data_prevista, data_devolucao, status_emprestimo, id_usuario, id_livro)VALUES
+(NOW(), '2026-11-17',NULL,'ABERTO',1,5);
+
+
+-- fase 3 - dql
+
+
+SELECT titulo, autor, quantidade_disponivel FROM livro;
+
+
+
+
+SELECT titulo, autor,quantidade_disponivel FROM livro
+WHERE quantidade_disponivel > 2
+ORDER BY quantidade_disponivel DESC;
+
+
+SELECT titulo, autor FROM livro
+WHERE titulo LIKE '%pequeno%';
+
+
+SELECT titulo, autor, ano_publicacao from livro
+WHERE ano_publicacao BETWEEN 1990 AND 2026;
+
+
+SELECT COUNT(*) AS quantidade, SUM(quantidade_disponivel) AS SOMA,
+AVG(quantidade_disponivel) AS MEDIA, MAX(quantidade_disponivel) AS
+MAXIMO, MIM(quantidade_disponivel) AS MINIMO FROM livro;
+
+
+SELECT 
+    E.id_locacao,
+    U.nome AS nome_usuario,
+    L.titulo AS titulo_livro,
+    E.data_emprestimo,
+    E.status_emprestimo
+FROM EMPRESTIMO E
+INNER JOIN USUARIO U ON E.id_usuario = U.id_usuario
+INNER JOIN LIVRO L ON E.id_livro = L.id_livro;
