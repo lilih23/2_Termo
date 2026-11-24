@@ -1,100 +1,108 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <link rel="stylesheet" href="style.css">
-    <title>Revisão - Recuperativa</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Uma celebração dos sabores, da cultura e das tradições do Pará.">
+  <title>Sabores do Pará — Festival de Comidas Típicas</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <header class="topo">
+    <a class="marca" href="#inicio" aria-label="Sabores do Pará — início">
+      <span class="marca-simbolo" aria-hidden="true">🍃</span>
+      <span><strong>SABORES</strong><small>DO PARÁ</small></span>
+    </a>
 
+    <nav class="navegacao" aria-label="Navegação principal">
+      <a href="#festival">O festival</a>
+      <a href="#sabores">Sabores</a>
+      <a href="#programacao">Cultura</a>
+    </nav>
 
-   <header class="inicio">
-<a href="#marca"><h1><span></span>Comidas do Pará</a></h1> <!--substitui o espaço, permitindo colocar a frase/texto separado -->
+    <a class="botao botao-topo" href="#sabores">Explore os sabores <span aria-hidden="true">↗</span></a>
+  </header>
 
+  <main>
+    <section class="hero" id="inicio" aria-labelledby="titulo-principal">
+      <div class="hero-conteudo">
+        <p class="sobretitulo"><span class="ponto"></span> FESTIVAL DE COMIDAS TÍPICAS</p>
+        <h1 id="titulo-principal">O Pará se encontra <em>à mesa.</em></h1>
+        <p class="hero-descricao">Uma celebração dos sabores amazônicos, das histórias que passam de geração em geração e da alegria de estar junto.</p>
+        <div class="hero-acoes">
+          <a class="botao botao-claro" href="#sabores">Descubra o menu <span aria-hidden="true">↓</span></a>
+          <span class="hero-nota">Tradição paraense<br>em cada colherada</span>
+        </div>
+        <div class="hero-detalhe" aria-hidden="true"><span>AMAZÔNIA</span><span>•</span><span>PARÁ</span><span>•</span><span>BRASIL</span></div>
+      </div>
 
-<nav>
-<ul class="navegacao">
-<li><a href="#sobre">Sobre</a></li>
-<li><a href="#sobre">Comidas</a></li>
-<li><a href="#sobre">Nossa cultura</a></li>
-</ul>
-</nav>
-</header>
-   
-<main>
-    <section class="conteudo-inicial">
-        <article class="conteudo-art">
-       A Cultura do Pará
+      <figure class="hero-imagem">
+        <img src="https://vejario.abril.com.br/wp-content/uploads/2023/12/IMG_0380.jpg?quality=70&strip=info&w=720&crop=1" alt="Tacacá paraense servido com camarões e jambu">
+        <figcaption><span>01 / SABOR DO PARÁ</span><strong>Tacacá, um clássico da nossa terra</strong></figcaption>
+        <span class="selo-foto" aria-hidden="true">feito<br>com<br>afeto</span>
+      </figure>
+    </section>
 
-A cultura do Pará é rica em tradições e costumes. É conhecida por suas danças, como o carimbó, suas festas, como o Círio de Nazaré, e comidas típicas, como o tacacá e o açaí. A cultura paraense tem influências indígenas e africanas e representa o orgulho e a história de seu povo.
+    <section class="faixa" id="festival" aria-label="Sobre o festival">
+      <p><span>✳</span> SABOR</p>
+      <p><span>✳</span> CULTURA</p>
+      <p><span>✳</span> ENCONTRO</p>
+      <p><span>✳</span> PARAENCE</p>
+    </section>
+
+    <section class="secao sabores" id="sabores" aria-labelledby="titulo-sabores">
+      <div class="cabecalho-secao">
+        <div>
+          <p class="sobretitulo escuro">DO NOSSO JEITO, DO NOSSO LUGAR</p>
+          <h2 id="titulo-sabores">Uma viagem por<br><em>sabores inesquecíveis.</em></h2>
+        </div>
+        <p class="texto-secao">Ingredientes da floresta, receitas cheias de história e aquele tempero que só o Pará tem. Qual vai ser o primeiro?</p>
+      </div>
+
+      <div class="grade-pratos">
+        <article class="prato prato-destaque">
+          <div class="prato-foto"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvbnjJiuvBJXjcUXonks5wwdsQ4Vbx09YdlWzZeovTsg&s=10" alt="Tacacá com camarões, tucupi e jambu" loading="lazy"><span class="numero-prato">01</span></div>
+          <div class="prato-info"><div><h3>Tacacá</h3><p>Quentinho, marcante e cheio de personalidade.</p></div><span class="prato-seta" aria-hidden="true">↗</span></div>
         </article>
-        <figure class="cartao-img">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/0/02/Bandeira_do_Par%C3%A1.svg?utm_source=pt.wikipedia.org&utm_campaign=index&utm_content=original" alt="Primeiro Conteúdo de Imagens Digitais">
-            <figcaption class="cartao-text">A bandeira do Pará é formada pelas cores vermelho, branco e azul. A faixa branca representa o zodíaco e a estrela azul representa o Pará como parte do Brasil. O vermelho simboliza a força e a coragem do povo paraense.</figcaption>
-        </figure>
+        <article class="prato">
+          <div class="prato-foto"><img src="https://www.opovo.com.br/_midias/jpg/2024/06/11/varanda-27403744.jpg" alt="Prato de vatapá servido com arroz e camarões" loading="lazy"><span class="numero-prato">02</span></div>
+          <div class="prato-info"><div><h3>vatapá</h3><p>Uma receita de tradição, feita para compartilhar.</p></div><span class="prato-seta" aria-hidden="true">↗</span></div>
+        </article>
+        <article class="prato">
+          <div class="prato-foto"><img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/15/81/e8/a5/campeao-de-venda-chapa.jpg?w=900&h=500&s=1" alt="Açaí em uma tigela " loading="lazy"><span class="numero-prato">03</span></div>
+          <div class="prato-info"><div><h3>Açaí</h3><p>O sabor do pará que conquistou o mundo.</p></div><span class="prato-seta" aria-hidden="true">↗</span></div>
+        </article>
+      </div>
+      <p class="nota-imagens">Imagens ilustrativas dos pratos apresentados.</p>
     </section>
 
-
-
-
-    <section class="galeria-conteudo">
-        <ul class="galeria-img">
-<li>
-    <figure class="galeria-gal">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSoWgaSrCCjqvuQYDhVDL2m6iBIwKULAjexLA26pZeqKbu1kZZs8W6HY1CV&s=10" alt="img">
-        <figcaption>Açai</figcaption>
-    </figure>
-</li>
-<li>
-    <figure class="galeria-gal">
-        <img src="https://vejario.abril.com.br/wp-content/uploads/2023/12/IMG_0380.jpg?quality=70&strip=info&w=720&crop=1" alt="img2">
-        <figcaption>Tacacá</figcaption>
-    </figure>
-</li>
-<li>
-    <figure class="galeria-gal">
-        <img src="https://www.deline.com.br/assets/images/recipes/vatapa-paraense/mobile/thumb-video.jpg?v3" alt="img3">
-        <figcaption>Vatapá</figcaption>
-    </figure>
-</li>
-        </ul>
+    <section class="cultura" id="programacao" aria-labelledby="titulo-cultura">
+      <div class="cultura-intro">
+        <p class="sobretitulo">MUITO ALÉM DO PRATO</p>
+        <h2 id="titulo-cultura">Uma festa com<br><em>alma paraense.</em></h2>
+        <p>A cultura do Pará também se celebra no ritmo, na conversa e no encontro de pessoas. Imagine o festival como um espaço para viver tudo isso.</p>
+        <a class="link-seta" href="#final">Vem sentir essa energia <span aria-hidden="true">↗</span></a>
+      </div>
+      <div class="cultura-lista">
+        <article class="item-cultura"><span class="item-icone" aria-hidden="true">♫</span><div><h3>Roda de carimbó</h3><p>Música e dança para entrar no ritmo da festa.</p></div><span class="item-numero">01</span></article>
+        <article class="item-cultura"><span class="item-icone" aria-hidden="true">✳</span><div><h3>Sabores da região</h3><p>Um convite para conhecer ingredientes e receitas paraenses.</p></div><span class="item-numero">02</span></article>
+        <article class="item-cultura"><span class="item-icone" aria-hidden="true">⌂</span><div><h3>Histórias e tradições</h3><p>Um encontro com as raízes e a riqueza cultural do Pará.</p></div><span class="item-numero">03</span></article>
+      </div>
     </section>
 
+    <section class="convite" id="final" aria-labelledby="titulo-convite">
+      <div class="convite-folha" aria-hidden="true">✳</div>
+      <p class="sobretitulo">VIVA ESSA EXPERIÊNCIA</p>
+      <h2 id="titulo-convite">O Pará tem sabor<br>de <em>encontro.</em></h2>
+      <p>Compartilhe a mesa, celebre a cultura e descubra um pouco mais da Amazônia em cada prato.</p>
+      <a class="botao botao-verde" href="#inicio">Voltar ao início <span aria-hidden="true">↑</span></a>
+    </section>
+  </main>
 
-      <section class="hoje-lista" aria-label="Produções atuais">
-                <article class="card3">
-                    <h1>Mercedes</h1>
-                    <img
-                        src="https://i.pinimg.com/1200x/d0/75/cb/d075cb8ea8a3becb1b28e8c433216f81.jpg"
-                        alt="one pirce"
-                    >
-                    
-                    <p>Mercedes</p>
-                    
-                </article>
-                <article class="card4">
-                    <img
-                        src="mercedes.png"
-                        alt="kimi"
-                    >
-                    
-                    <p>Kimi antonelli</p>
-                    
-                </article>
-                <article class="card3">
-                    <img
-                        src="mercedes2.png"
-                        alt="black clover"
-                    >
-                   
-                    <p>Desde 1926</p>
-                  
-                </article>
-            </section>
-        </section>
-</main>
-
-
+  <footer class="rodape">
+    <a class="marca marca-rodape" href="#inicio"><span class="marca-simbolo" aria-hidden="true">🍃</span><span><strong>SABORES</strong><small>DO PARÁ</small></span></a>
+    <p>Um festival para celebrar a cozinha e a cultura paraense.</p>
+    <span class="rodape-final">FEITO COM ORGULHO <span aria-hidden="true">✳</span></span>
+  </footer>
 </body>
 </html>
