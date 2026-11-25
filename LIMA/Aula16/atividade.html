@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EXERCÍCIO</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Paleta rosa e roxa para substituir as cores que não são azuis. */
+        .text-secondary {
+            color: #7b2cbf !important;
+        }
+
+        .bg-success,
+        .btn-success {
+            background-color: #e75480 !important;
+            border-color: #e75480 !important;
+        }
+
+        .btn-success:hover,
+        .btn-success:focus {
+            background-color: #d94370 !important;
+            border-color: #d94370 !important;
+        }
+
+        .bg-danger,
+        .bg-dark,
+        .btn-danger,
+        .btn-dark {
+            background-color: #7b2cbf !important;
+            border-color: #7b2cbf !important;
+        }
+
+        .btn-danger:hover,
+        .btn-danger:focus,
+        .btn-dark:hover,
+        .btn-dark:focus {
+            background-color: #6822a5 !important;
+            border-color: #6822a5 !important;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container mt-4">
+
+        <h1 class="text-primary">EXERCÍCIO</h1>
+
+        <!-- EXERCÍCIO 01 -->
+        <h2 class="mt-4">Exercício 01 - Cores</h2>
+
+        <h3 class="text-primary">Título azul</h3>
+        <p class="text-secondary">Este é um parágrafo com texto secundário.</p>
+
+        <section class="bg-dark text-white p-3">
+            Esta é uma seção escura com texto branco.
+        </section>
+
+
+        <!-- EXERCÍCIO 02 -->
+        <h2 class="mt-4">Exercício 02 - Espaçamentos</h2>
+
+        <section class="bg-primary text-white p-1 mb-2">
+            Padding p-1
+        </section>
+
+        <section class="bg-success text-white p-3 mb-2">
+            Padding p-3
+        </section>
+
+        <section class="bg-danger text-white p-5 mb-2">
+            Padding p-5
+        </section>
+
+        <h4 class="mt-3">Testando Margin</h4>
+
+        <div class="bg-primary text-white m-1 p-2">
+            Margin m-1
+        </div>
+
+        <div class="bg-success text-white m-3 p-2">
+            Margin m-3
+        </div>
+
+        <div class="bg-danger text-white m-5 p-2">
+            Margin m-5
+        </div>
+
+
+        <!-- EXERCÍCIO 03 -->
+        <h2 class="mt-4">Exercício 03 - Botões</h2>
+
+        <button class="btn btn-primary">Primary</button>
+        <button class="btn btn-success">Success</button>
+        <button class="btn btn-danger">Danger</button>
+        <button class="btn btn-dark">Dark</button>
+        <button class="btn btn-outline-primary">Outline Primary</button>
+
+        <h4 class="mt-3">Tamanhos dos botões</h4>
+
+        <button class="btn btn-primary btn-lg">Botão Grande</button>
+        <button class="btn btn-success btn-sm">Botão Pequeno</button>
+
+
+        <!-- EXERCÍCIO 04 -->
+        <h2 class="mt-4">Exercício 04 - Containers</h2>
+
+        <h4>Container</h4>
+        <div class="container bg-primary text-white p-3 mb-3">
+            Este espaço utiliza container.
+        </div>
+
+        <h4>Container Fluid</h4>
+        <div class="container-fluid bg-success text-white p-3">
+            Este espaço utiliza container-fluid.
+        </div>
+
+
+        <!-- EXERCÍCIO 05 -->
+        <h2 class="mt-4">Exercício 05 - Grid Responsivo</h2>
+
+        <div class="row text-white text-center">
+
+            <div class="col-12 col-md-6 col-3 mb-3">
+                <div class="bg-primary p-4">
+                    Conteúdo 1
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-3 mb-3">
+                <div class="bg-success p-4">
+                    Conteúdo 2
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-3 mb-3">
+                <div class="bg-danger p-4">
+                    Conteúdo 3
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-xl-3 mb-3">
+                <div class="bg-dark p-4">
+                    Conteúdo 4
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
